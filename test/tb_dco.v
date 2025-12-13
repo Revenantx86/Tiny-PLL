@@ -18,7 +18,7 @@ module tb_dco;
 
     initial begin
         // --- VCD DUMPING COMMANDS START HERE ---
-        $dumpfile("test/dco_tb.vcd");   // 1. Set the output filename
+        $dumpfile("build/dco_tb.vcd");   // 1. Set the output filename
         $dumpvars(0, tb_dco);           // 2. Dump all signals in 'tb_dco' hierarchy
         // ---------------------------------------
         // Init
