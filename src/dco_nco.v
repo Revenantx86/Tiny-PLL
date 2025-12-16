@@ -21,5 +21,4 @@ module dco_nco #(
 
     // The MSB is the output clock (50% duty cycle on average, but with jitter)
     assign dco_out = accumulator[WIDTH-1];
-
 endmodule
