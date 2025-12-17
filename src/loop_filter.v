@@ -1,40 +1,54 @@
-module loop_filter #(
-    parameter INITIAL_FREQ = 32'd42949673, // Start at ~1 MHz (for 100MHz system)
-    parameter K_P = 1000,                  // Proportional Gain
-    parameter K_I = 10                     // Integral Gain
-)(
-    input  wire        clk,        // System Clock (100 MHz)
-    input  wire        rst_n,      // Reset
-    input  wire        up,         // From PFD
-    input  wire        down,       // From PFD
-    output reg [31:0]  tuning_word // To DCO
+module loop_filter (
+    input  wire              clk,
+    input  wire              rst_n,
+    input  wire              sample_en,
+    input  wire signed [3:0] error_in,
+    input  wire [4:0]        kp_shift,
+    input  wire [4:0]        ki_shift,
+    input  wire [31:0]       initial_freq,
+    output reg  [31:0]       dco_ctrl,
+    output reg               lock_detect
 );
 
-    // 1. Convert PFD pulses to a signed error (+1, -1, or 0)
-    // We use a signed 2-bit wire: 01 (+1), 11 (-1), 00 (0)
-    wire signed [1:0] error_val;
-    assign error_val = (up && !down) ? 2'sd1 : 
-                       (!up && down) ? -2'sd1 : 2'sd0;
-
-    // 2. Integral Path (Accumulator)
     reg signed [31:0] integrator;
-    
+    wire signed [31:0] prop_term;
+    wire signed [31:0] integ_term;
+
+    // 1. Sign Extension (Keep this from previous fix)
+    assign prop_term  = $signed({{28{error_in[3]}}, error_in}) <<< kp_shift;
+    assign integ_term = $signed({{28{error_in[3]}}, error_in}) <<< ki_shift;
+
+    // 2. THE FIX: Calculate Next Integrator Combinatorially
+    wire signed [31:0] next_integrator;
+    assign next_integrator = integrator + integ_term;
+
+    // Lock Detect Logic
+    reg [4:0] zero_error_count;
+
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            integrator <= 0;
-            tuning_word <= INITIAL_FREQ;
-        end else begin
-            // Update Integrator (accumulate error * Ki)
-            // We use simple addition since error is just +1/-1
-            if (error_val == 1) 
-                integrator <= integrator + K_I;
-            else if (error_val == -1) 
-                integrator <= integrator - K_I;
+            integrator       <= initial_freq;
+            dco_ctrl         <= initial_freq;
+            zero_error_count <= 0;
+            lock_detect      <= 0;
+        end else if (sample_en) begin
             
-            // Calculate Output: Base + (Error * Kp) + Integrator
-            // Note: In real silicon, you must clamp/saturate this to avoid overflow!
-            tuning_word <= INITIAL_FREQ + (error_val * K_P) + integrator;
+            // Update Integrator with the pre-calculated value
+            integrator <= next_integrator;
+
+            // Use 'next_integrator' for output so we include immediate error
+            dco_ctrl <= next_integrator + prop_term;
+
+            // Lock Detection
+            if (error_in == 0) begin
+                if (zero_error_count < 20) 
+                    zero_error_count <= zero_error_count + 1;
+                else 
+                    lock_detect <= 1'b1;
+            end else begin
+                zero_error_count <= 0;
+                lock_detect <= 1'b0;
+            end
         end
     end
-
 endmodule

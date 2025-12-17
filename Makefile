@@ -99,7 +99,7 @@ verilator-dco: $(BUILD_DIR)
 	
 	@echo "$(YELLOW)  Done. If enabled, waveform is at waveform.vcd$(NC)"
 
-	
+
 # Target: make verilator-div
 verilator-div: $(BUILD_DIR)
 	@echo "$(GREEN)========================================$(NC)"
@@ -125,6 +125,45 @@ verilator-div: $(BUILD_DIR)
 	# 3. Run Executable
 	$(BUILD_DIR)/div_sim
 
+# Target: make verilator-filter
+verilator-filter: $(BUILD_DIR)
+	@echo "$(GREEN)========================================$(NC)"
+	@echo "$(BLUE)  [Verilator] Testing Loop Filter...$(NC)"
+	@echo "$(GREEN)========================================$(NC)"
+	
+	$(VERILATOR) $(VERIL_FLAGS) \
+		--Mdir $(V_OBJ_DIR) \
+		-I$(SRC_DIR) \
+		-o ../filter_sim \
+		$(abspath $(SRC_DIR)/loop_filter.v) \
+		$(abspath $(TB_DIR)/loop_filter_tb.cpp)
+
+	$(MAKE) -C $(V_OBJ_DIR) -f Vloop_filter.mk
+
+	@echo "$(GREEN)Running Simulation...$(NC)"
+	$(BUILD_DIR)/filter_sim
+
+# Target: make verilator-chain
+verilator-chain: $(BUILD_DIR)
+	@echo "$(GREEN)========================================$(NC)"
+	@echo "$(BLUE)  [Verilator] Testing Filter->DCO->Div...$(NC)"
+	@echo "$(GREEN)========================================$(NC)"
+	
+	$(VERILATOR) $(VERIL_FLAGS) \
+		--Mdir $(V_OBJ_DIR) \
+		--top-module chain \
+		-I$(SRC_DIR) \
+		-o ../chain_sim \
+		$(abspath $(SRC_DIR)/loop_filter.v) \
+		$(abspath $(SRC_DIR)/dco_nco.v) \
+		$(abspath $(SRC_DIR)/divider.v) \
+		$(abspath $(SRC_DIR)/chain.v) \
+		$(abspath $(TB_DIR)/chain_tb.cpp)
+
+	$(MAKE) -C $(V_OBJ_DIR) -f Vchain.mk
+
+	@echo "$(GREEN)Running Simulation...$(NC)"
+	$(BUILD_DIR)/chain_sim
 
 # --- UTILS ---
 
