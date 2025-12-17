@@ -1,66 +1,100 @@
-module pll_top #(
-    parameter DIV_VALUE = 4,
-    parameter DCO_WIDTH = 32,
-    parameter INITIAL_FREQ = 32'd0, 
-    parameter K_P = 2000,
-    parameter K_I = 20
-)(
-    input  wire        sys_clk,       // NEW: High-speed master clock (e.g. 500 MHz)
-    input  wire        ref_clk,       // Slow Reference clock (e.g. 10 MHz)
-    input  wire        rst_n,
-    output wire        pll_out,
-    output wire        locked_debug,
-    output wire [31:0] debug_tuning_word // Expose this for waveform viewing
+module pll_top (
+    input  wire              sys_clk,
+    input  wire              rst_n,
+    
+    input  wire              ref_clk,
+    input  wire [31:0]       div_val,
+    input  wire [31:0]       initial_freq,
+    
+    output wire              pll_out,
+    output wire              lock_detect,
+    output wire [31:0]       debug_dco_word
 );
 
-    wire        fb_clk;
-    wire        up, down;
-    wire [31:0] tuning_word;
+    wire signed [3:0] pfd_error;
+    wire              pfd_sample;
+    wire [31:0]       dco_ctrl_word;
+    wire              dco_clk_raw;
+    wire              fb_clk_internal;
+    wire              internal_lock;
+
+    // --- SMART GAIN CONTROLLER WITH HYSTERESIS ---
+    reg [4:0] dynamic_kp;
+    reg [4:0] dynamic_ki;
     
-    // Assign internal signal to output for debugging
-    assign debug_tuning_word = tuning_word;
+    // Timer to filter out short "glitch" unlocks
+    reg [5:0] unlock_timer; 
 
-    // 1. PFD (Compares Ref vs Feedback)
-    pfd u_pfd (
-        .ref_clk (ref_clk),
-        .fb_clk  (fb_clk),
-        .rst_n   (rst_n),
-        .up      (up),
-        .down    (down)
+    always @(posedge sys_clk or negedge rst_n) begin
+        if (!rst_n) begin
+            dynamic_kp <= 17;
+            dynamic_ki <= 13;
+            unlock_timer <= 0;
+        end else begin
+            if (internal_lock) begin
+                // === LOCKED STATE ===
+                // Clear the panic timer
+                unlock_timer <= 0;
+                
+                // Use TRACKING GAINS (Smooth & Stable)
+                dynamic_kp <= 13; // Moderate Proportional
+                dynamic_ki <= 9;  // Moderate Integral
+            end else begin
+                // === UNLOCKED STATE ===
+                // Don't panic immediately! Wait to see if it's a real jump.
+                if (unlock_timer < 32) begin
+                    unlock_timer <= unlock_timer + 1;
+                    // Keep using Low Gains while waiting
+                    dynamic_kp <= 13;
+                    dynamic_ki <= 9;
+                end else begin
+                    // We have been unlocked for 32 cycles -> REAL JUMP.
+                    // Engage ACQUISITION GAINS (Fast)
+                    dynamic_kp <= 17; // Reduced from 18 to prevent violent overshoot
+                    dynamic_ki <= 13; 
+                end
+            end
+        end
+    end
+    // ---------------------------------------------
+
+    pfd pfd_inst (
+        .sys_clk   (sys_clk),
+        .rst_n     (rst_n),
+        .ref_clk   (ref_clk),
+        .fb_clk    (fb_clk_internal),
+        .error_out (pfd_error),
+        .sample_en (pfd_sample)
     );
 
-    // 2. Loop Filter (Updates on Ref Clk edge)
-    loop_filter #(
-        .INITIAL_FREQ(INITIAL_FREQ),
-        .K_P(K_P),
-        .K_I(K_I)
-    ) u_filter (
-        .clk         (ref_clk),   // Filter still updates at reference rate
+    loop_filter lf_inst (
+        .clk         (sys_clk),
         .rst_n       (rst_n),
-        .up          (up),
-        .down        (down),
-        .tuning_word (tuning_word)
+        .sample_en   (pfd_sample),
+        .error_in    (pfd_error),
+        .kp_shift    (dynamic_kp),
+        .ki_shift    (dynamic_ki),
+        .initial_freq(initial_freq),
+        .dco_ctrl    (dco_ctrl_word),
+        .lock_detect (internal_lock)
     );
 
-    // 3. DCO (Runs on HIGH SPEED System Clock)
-    dco_nco #(
-        .WIDTH(DCO_WIDTH)
-    ) u_dco (
-        .sys_clk     (sys_clk),    // <--- CHANGED: Now uses fast system clock
+    dco_nco dco_inst (
+        .sys_clk     (sys_clk),
         .rst_n       (rst_n),
-        .tuning_word (tuning_word),
-        .dco_out     (pll_out)
+        .tuning_word (dco_ctrl_word),
+        .dco_out     (dco_clk_raw)
     );
 
-    // 4. Divider
-    divider #(
-        .DIV_VALUE(DIV_VALUE)
-    ) u_div (
-        .clk_in  (pll_out),
-        .rst_n   (rst_n),
-        .clk_out (fb_clk)
+    divider div_inst (
+        .clk_in      (dco_clk_raw),
+        .rst_n       (rst_n),
+        .div_val     (div_val),
+        .clk_out     (fb_clk_internal)
     );
 
-    assign locked_debug = ~(up | down);
+    assign pll_out        = dco_clk_raw;
+    assign debug_dco_word = dco_ctrl_word;
+    assign lock_detect    = internal_lock;
 
 endmodule
