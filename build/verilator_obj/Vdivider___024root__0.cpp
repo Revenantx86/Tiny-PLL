@@ -60,7 +60,7 @@ void Vdivider___024root___nba_sequent__TOP__0(Vdivider___024root* vlSelf) {
         } else {
             __Vdly__divider__DOT__counter = ((IData)(1U) 
                                              + vlSelfRef.divider__DOT__counter);
-            vlSelfRef.clk_out = (vlSelfRef.divider__DOT__counter 
+            vlSelfRef.clk_out = (((IData)(1U) + vlSelfRef.divider__DOT__counter) 
                                  < VL_SHIFTR_III(32,32,32, vlSelfRef.div_val, 1U));
         }
     } else {
