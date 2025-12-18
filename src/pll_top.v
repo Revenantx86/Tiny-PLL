@@ -25,7 +25,7 @@ module pll_top (
     // Timer to filter out short "glitch" unlocks
     reg [5:0] unlock_timer; 
 
-    always @(posedge sys_clk or negedge rst_n) begin
+    always @(posedge sys_clk) begin
         if (!rst_n) begin
             dynamic_kp <= 17;
             dynamic_ki <= 13;

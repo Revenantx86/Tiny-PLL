@@ -7,7 +7,7 @@ module divider (
 
     reg [31:0] counter;
 
-    always @(posedge clk_in or negedge rst_n) begin
+    always @(posedge clk_in) begin
         if (!rst_n) begin
             counter <= 0;
             clk_out <= 0;

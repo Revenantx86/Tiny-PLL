@@ -10,7 +10,7 @@ module dco_nco #(
     // The Phase Accumulator
     reg [WIDTH-1:0] accumulator;
 
-    always @(posedge sys_clk or negedge rst_n) begin
+    always @(posedge sys_clk) begin
         if (!rst_n) begin
             accumulator <= {WIDTH{1'b0}};
         end else begin

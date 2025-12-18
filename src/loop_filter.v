@@ -25,7 +25,7 @@ module loop_filter (
     // Lock Detect Logic
     reg [4:0] zero_error_count;
 
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             integrator       <= initial_freq;
             dco_ctrl         <= initial_freq;

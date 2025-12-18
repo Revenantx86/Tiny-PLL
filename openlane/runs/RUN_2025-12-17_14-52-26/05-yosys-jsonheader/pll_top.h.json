@@ -1,0 +1,2412 @@
+{
+  "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 16.0.6 -fPIC -O3)",
+  "modules": {
+    "pll_top": {
+      "attributes": {
+        "hdlname": "pll_top",
+        "top": "00000000000000000000000000000001",
+        "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:1.1-100.10"
+      },
+      "ports": {
+        "sys_clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "ref_clk": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "div_val": {
+          "direction": "input",
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ]
+        },
+        "initial_freq": {
+          "direction": "input",
+          "bits": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ]
+        },
+        "pll_out": {
+          "direction": "output",
+          "bits": [ 69 ]
+        },
+        "lock_detect": {
+          "direction": "output",
+          "bits": [ 70 ]
+        },
+        "debug_dco_word": {
+          "direction": "output",
+          "bits": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ]
+        }
+      },
+      "cells": {
+        "$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:46$4": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000110",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:46.37-46.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 103, 104, 105, 106, 107, 108 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140 ]
+          }
+        },
+        "$flatten\\dco_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:18$15": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:18.28-18.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 69 ],
+            "B": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ],
+            "Y": [ 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ]
+          }
+        },
+        "$flatten\\dco_inst.$procdff$147": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:13.5-20.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235 ],
+            "Q": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 69 ]
+          }
+        },
+        "$flatten\\dco_inst.$procmux$95": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:14.13-14.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:14.9-19.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
+            "S": [ 3 ],
+            "Y": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235 ]
+          }
+        },
+        "$flatten\\div_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:21$9": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:21.28-21.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ]
+          }
+        },
+        "$flatten\\div_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25$10": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25.22-25.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331 ]
+          }
+        },
+        "$flatten\\div_inst.$ge$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16$8": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.17-16.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+            "B": [ 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363 ],
+            "Y": [ 364 ]
+          }
+        },
+        "$flatten\\div_inst.$lt$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25$12": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25.21-25.51"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331 ],
+            "B": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, "0" ],
+            "Y": [ 365 ]
+          }
+        },
+        "$flatten\\div_inst.$procdff$148": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:10.5-31.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 69 ],
+            "D": [ 366 ],
+            "Q": [ 367 ]
+          }
+        },
+        "$flatten\\div_inst.$procdff$149": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:10.5-31.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 69 ],
+            "D": [ 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ],
+            "Q": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ]
+          }
+        },
+        "$flatten\\div_inst.$procmux$101": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.17-16.39|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.13-29.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 400 ],
+            "B": [ "1" ],
+            "S": [ 364 ],
+            "Y": [ 401 ]
+          }
+        },
+        "$flatten\\div_inst.$procmux$104": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:11.13-11.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:11.9-30.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 401 ],
+            "S": [ 3 ],
+            "Y": [ 366 ]
+          }
+        },
+        "$flatten\\div_inst.$procmux$107": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.17-16.39|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.13-29.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 364 ],
+            "Y": [ 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433 ]
+          }
+        },
+        "$flatten\\div_inst.$procmux$110": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:11.13-11.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:11.9-30.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433 ],
+            "S": [ 3 ],
+            "Y": [ 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ]
+          }
+        },
+        "$flatten\\div_inst.$procmux$98": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25.21-25.51|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25.17-28.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 365 ],
+            "Y": [ 400 ]
+          }
+        },
+        "$flatten\\div_inst.$sub$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16$7": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.28-16.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363 ]
+          }
+        },
+        "$flatten\\lf_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:23$18": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:23.30-23.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465 ],
+            "B": [ 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497 ],
+            "Y": [ 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529 ]
+          }
+        },
+        "$flatten\\lf_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:40$21": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:40.25-40.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529 ],
+            "B": [ 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561 ],
+            "Y": [ 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593 ]
+          }
+        },
+        "$flatten\\lf_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:45$24": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:45.41-45.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 594, 595, 596, 597, 598 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630 ]
+          }
+        },
+        "$flatten\\lf_inst.$eq$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43$22": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43.17-43.30"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 631, 632, 633, 634 ],
+            "Y": [ 635 ]
+          }
+        },
+        "$flatten\\lf_inst.$lt$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44$23": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44.21-44.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 594, 595, 596, 597, 598 ],
+            "B": [ "0", "0", "1", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 636 ]
+          }
+        },
+        "$flatten\\lf_inst.$procdff$143": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 637 ],
+            "Q": [ 70 ]
+          }
+        },
+        "$flatten\\lf_inst.$procdff$144": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669 ],
+            "Q": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ]
+          }
+        },
+        "$flatten\\lf_inst.$procdff$145": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701 ],
+            "Q": [ 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465 ]
+          }
+        },
+        "$flatten\\lf_inst.$procdff$146": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 702, 703, 704, 705, 706 ],
+            "Q": [ 594, 595, 596, 597, 598 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$64": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44.21-44.42|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44.17-47.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 594, 595, 596, 597, 598 ],
+            "B": [ 599, 600, 601, 602, 603 ],
+            "S": [ 636 ],
+            "Y": [ 707, 708, 709, 710, 711 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$66": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43.17-43.30|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43.13-51.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0" ],
+            "B": [ 707, 708, 709, 710, 711 ],
+            "S": [ 635 ],
+            "Y": [ 712, 713, 714, 715, 716 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$68": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.22-34.31|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.18-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 594, 595, 596, 597, 598 ],
+            "B": [ 712, 713, 714, 715, 716 ],
+            "S": [ 717 ],
+            "Y": [ 718, 719, 720, 721, 722 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$71": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.9-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0" ],
+            "B": [ 718, 719, 720, 721, 722 ],
+            "S": [ 3 ],
+            "Y": [ 702, 703, 704, 705, 706 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$73": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.22-34.31|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.18-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465 ],
+            "B": [ 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529 ],
+            "S": [ 717 ],
+            "Y": [ 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$76": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.9-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+            "B": [ 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ],
+            "S": [ 3 ],
+            "Y": [ 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$78": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.22-34.31|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.18-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ],
+            "B": [ 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593 ],
+            "S": [ 717 ],
+            "Y": [ 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$81": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.9-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+            "B": [ 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786 ],
+            "S": [ 3 ],
+            "Y": [ 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$85": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44.21-44.42|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44.17-47.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 70 ],
+            "S": [ 636 ],
+            "Y": [ 787 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$87": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43.17-43.30|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43.13-51.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 787 ],
+            "S": [ 635 ],
+            "Y": [ 788 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$89": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.22-34.31|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:34.18-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 70 ],
+            "B": [ 788 ],
+            "S": [ 717 ],
+            "Y": [ 789 ]
+          }
+        },
+        "$flatten\\lf_inst.$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:29.9-52.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 789 ],
+            "S": [ 3 ],
+            "Y": [ 637 ]
+          }
+        },
+        "$flatten\\lf_inst.$sshl$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:18$16": {
+          "hide_name": 1,
+          "type": "$sshl",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:18.25-18.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 631, 632, 633, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634 ],
+            "B": [ 790, 791, 792, 793, 794 ],
+            "Y": [ 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561 ]
+          }
+        },
+        "$flatten\\lf_inst.$sshl$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:19$17": {
+          "hide_name": 1,
+          "type": "$sshl",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000100000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:19.25-19.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 631, 632, 633, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634, 634 ],
+            "B": [ 795, 796, 797, 798, 799 ],
+            "Y": [ 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497 ]
+          }
+        },
+        "$flatten\\pfd_inst.$eq$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:23$27": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:23.22-23.44"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 800, 801 ],
+            "B": [ "1", "0" ],
+            "Y": [ 802 ]
+          }
+        },
+        "$flatten\\pfd_inst.$eq$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:24$28": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:24.22-24.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 803, 804 ],
+            "B": [ "1", "0" ],
+            "Y": [ 805 ]
+          }
+        },
+        "$flatten\\pfd_inst.$logic_and$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46$32": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46.25-46.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 802 ],
+            "B": [ 806 ],
+            "Y": [ 807 ]
+          }
+        },
+        "$flatten\\pfd_inst.$logic_and$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47$34": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47.30-47.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 805 ],
+            "B": [ 808 ],
+            "Y": [ 809 ]
+          }
+        },
+        "$flatten\\pfd_inst.$logic_not$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46$31": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46.37-46.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 805 ],
+            "Y": [ 806 ]
+          }
+        },
+        "$flatten\\pfd_inst.$logic_not$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47$33": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47.41-47.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 802 ],
+            "Y": [ 808 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procdff$150": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:33.5-65.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 810, 811, 812, 813 ],
+            "Q": [ 631, 632, 633, 634 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procdff$151": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:33.5-65.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 814 ],
+            "Q": [ 717 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procdff$152": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:33.5-65.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 815, 816 ],
+            "Q": [ 817, 818 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procdff$157": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:12.5-20.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 4, 819, 800 ],
+            "Q": [ 819, 800, 801 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procdff$162": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:12.5-20.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 367, 820, 803 ],
+            "Q": [ 820, 803, 804 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$113": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:34.13-34.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:34.9-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 3 ],
+            "Y": [ 814 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$116": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:59.25-59.33|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:59.21-59.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "0", "0" ],
+            "S": [ 802 ],
+            "Y": [ 821, 822 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$118": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ 821, 822, 823, 824, 825, 826 ],
+            "S": [ 827, 828, 829 ],
+            "Y": [ 830, 831 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$119_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "0", "1" ],
+            "Y": [ 827 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$120": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:53.25-53.32|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:53.21-53.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "0", "0" ],
+            "S": [ 805 ],
+            "Y": [ 823, 824 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$122_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "1", "0" ],
+            "Y": [ 828 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$123": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47.30-47.50|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47.26-47.72"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "0", "1" ],
+            "S": [ 809 ],
+            "Y": [ 832, 833 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$126": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46.25-46.45|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46.21-47.72"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 832, 833 ],
+            "B": [ "1", "0" ],
+            "S": [ 807 ],
+            "Y": [ 825, 826 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$128_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "Y": [ 829 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$130": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:34.13-34.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:34.9-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ 830, 831 ],
+            "S": [ 3 ],
+            "Y": [ 815, 816 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$133": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 631, 632, 633, 634 ],
+            "B": [ "1", "1", "1", "1", "1", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 834, 835, 836 ],
+            "Y": [ 837, 838, 839, 840 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$134_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "0", "1" ],
+            "Y": [ 834 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$135_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "B": [ "1", "0" ],
+            "Y": [ 835 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$136_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:0.0-0.0|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:43.13-63.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 817, 818 ],
+            "Y": [ 836 ]
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$138": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:34.13-34.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:34.9-64.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ 837, 838, 839, 840 ],
+            "S": [ 3 ],
+            "Y": [ 810, 811, 812, 813 ]
+          }
+        },
+        "$lt$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45$3": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000110",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.21-45.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 103, 104, 105, 106, 107, 108 ],
+            "B": [ "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 841 ]
+          }
+        },
+        "$procdff$140": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:28.5-58.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 842, 843, 844, 845, 846 ],
+            "Q": [ 790, 791, 792, 793, 794 ]
+          }
+        },
+        "$procdff$141": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:28.5-58.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 847, 848, 849, 850, 851 ],
+            "Q": [ 795, 796, 797, 798, 799 ]
+          }
+        },
+        "$procdff$142": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:28.5-58.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 852, 853, 854, 855, 856, 857 ],
+            "Q": [ 103, 104, 105, 106, 107, 108 ]
+          }
+        },
+        "$procmux$36": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.21-45.38|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.17-55.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "1", "1", "0" ],
+            "B": [ "1", "0", "0", "1", "0" ],
+            "S": [ 841 ],
+            "Y": [ 858, 859, 860, 861, 862 ]
+          }
+        },
+        "$procmux$39": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:34.17-34.30|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:34.13-56.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 858, 859, 860, 861, 862 ],
+            "B": [ "1", "0", "0", "1", "0" ],
+            "S": [ 70 ],
+            "Y": [ 863, 864, 865, 866, 867 ]
+          }
+        },
+        "$procmux$42": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29.9-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "1", "1", "0" ],
+            "B": [ 863, 864, 865, 866, 867 ],
+            "S": [ 3 ],
+            "Y": [ 847, 848, 849, 850, 851 ]
+          }
+        },
+        "$procmux$45": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.21-45.38|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.17-55.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0", "0", "1" ],
+            "B": [ "1", "0", "1", "1", "0" ],
+            "S": [ 841 ],
+            "Y": [ 868, 869, 870, 871, 872 ]
+          }
+        },
+        "$procmux$48": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:34.17-34.30|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:34.13-56.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 868, 869, 870, 871, 872 ],
+            "B": [ "1", "0", "1", "1", "0" ],
+            "S": [ 70 ],
+            "Y": [ 873, 874, 875, 876, 877 ]
+          }
+        },
+        "$procmux$51": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29.9-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0", "0", "1" ],
+            "B": [ 873, 874, 875, 876, 877 ],
+            "S": [ 3 ],
+            "Y": [ 842, 843, 844, 845, 846 ]
+          }
+        },
+        "$procmux$54": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.21-45.38|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.17-55.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 103, 104, 105, 106, 107, 108 ],
+            "B": [ 109, 110, 111, 112, 113, 114 ],
+            "S": [ 841 ],
+            "Y": [ 878, 879, 880, 881, 882, 883 ]
+          }
+        },
+        "$procmux$57": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:34.17-34.30|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:34.13-56.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 878, 879, 880, 881, 882, 883 ],
+            "B": [ "0", "0", "0", "0", "0", "0" ],
+            "S": [ 70 ],
+            "Y": [ 884, 885, 886, 887, 888, 889 ]
+          }
+        },
+        "$procmux$60": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29.13-29.19|/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29.9-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0" ],
+            "B": [ 884, 885, 886, 887, 888, 889 ],
+            "S": [ 3 ],
+            "Y": [ 852, 853, 854, 855, 856, 857 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\dynamic_ki[4:0]": {
+          "hide_name": 1,
+          "bits": [ 847, 848, 849, 850, 851 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:28.5-58.8"
+          }
+        },
+        "$0\\dynamic_kp[4:0]": {
+          "hide_name": 1,
+          "bits": [ 842, 843, 844, 845, 846 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:28.5-58.8"
+          }
+        },
+        "$0\\unlock_timer[5:0]": {
+          "hide_name": 1,
+          "bits": [ 852, 853, 854, 855, 856, 857 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:28.5-58.8"
+          }
+        },
+        "$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:46$4_Y": {
+          "hide_name": 1,
+          "bits": [ 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:46.37-46.53",
+            "unused_bits": "6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\dco_inst.$0\\accumulator[31:0]": {
+          "hide_name": 1,
+          "bits": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:13.5-20.8"
+          }
+        },
+        "$flatten\\dco_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:18$15_Y": {
+          "hide_name": 1,
+          "bits": [ 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:18.28-18.53"
+          }
+        },
+        "$flatten\\div_inst.$0\\clk_out[0:0]": {
+          "hide_name": 1,
+          "bits": [ 366 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:10.5-31.8"
+          }
+        },
+        "$flatten\\div_inst.$0\\counter[31:0]": {
+          "hide_name": 1,
+          "bits": [ 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:10.5-31.8"
+          }
+        },
+        "$flatten\\div_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:21$9_Y": {
+          "hide_name": 1,
+          "bits": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:21.28-21.39"
+          }
+        },
+        "$flatten\\div_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25$10_Y": {
+          "hide_name": 1,
+          "bits": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25.22-25.33"
+          }
+        },
+        "$flatten\\div_inst.$ge$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16$8_Y": {
+          "hide_name": 1,
+          "bits": [ 364 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.17-16.39"
+          }
+        },
+        "$flatten\\div_inst.$lt$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25$12_Y": {
+          "hide_name": 1,
+          "bits": [ 365 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:25.21-25.51"
+          }
+        },
+        "$flatten\\div_inst.$procmux$101_Y": {
+          "hide_name": 1,
+          "bits": [ 401 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\div_inst.$procmux$107_Y": {
+          "hide_name": 1,
+          "bits": [ 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\div_inst.$procmux$98_Y": {
+          "hide_name": 1,
+          "bits": [ 400 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\div_inst.$sub$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16$7_Y": {
+          "hide_name": 1,
+          "bits": [ 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:16.28-16.39"
+          }
+        },
+        "$flatten\\lf_inst.$0\\dco_ctrl[31:0]": {
+          "hide_name": 1,
+          "bits": [ 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          }
+        },
+        "$flatten\\lf_inst.$0\\integrator[31:0]": {
+          "hide_name": 1,
+          "bits": [ 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          }
+        },
+        "$flatten\\lf_inst.$0\\lock_detect[0:0]": {
+          "hide_name": 1,
+          "bits": [ 637 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          }
+        },
+        "$flatten\\lf_inst.$0\\zero_error_count[4:0]": {
+          "hide_name": 1,
+          "bits": [ 702, 703, 704, 705, 706 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:28.5-53.8"
+          }
+        },
+        "$flatten\\lf_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:40$21_Y": {
+          "hide_name": 1,
+          "bits": [ 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:40.25-40.52"
+          }
+        },
+        "$flatten\\lf_inst.$add$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:45$24_Y": {
+          "hide_name": 1,
+          "bits": [ 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:45.41-45.61",
+            "unused_bits": "5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$flatten\\lf_inst.$eq$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43$22_Y": {
+          "hide_name": 1,
+          "bits": [ 635 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:43.17-43.30"
+          }
+        },
+        "$flatten\\lf_inst.$lt$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44$23_Y": {
+          "hide_name": 1,
+          "bits": [ 636 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:44.21-44.42"
+          }
+        },
+        "$flatten\\lf_inst.$procmux$64_Y": {
+          "hide_name": 1,
+          "bits": [ 707, 708, 709, 710, 711 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$66_Y": {
+          "hide_name": 1,
+          "bits": [ 712, 713, 714, 715, 716 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$68_Y": {
+          "hide_name": 1,
+          "bits": [ 718, 719, 720, 721, 722 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$73_Y": {
+          "hide_name": 1,
+          "bits": [ 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$78_Y": {
+          "hide_name": 1,
+          "bits": [ 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$85_Y": {
+          "hide_name": 1,
+          "bits": [ 787 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$87_Y": {
+          "hide_name": 1,
+          "bits": [ 788 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\lf_inst.$procmux$89_Y": {
+          "hide_name": 1,
+          "bits": [ 789 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$0\\error_out[3:0]": {
+          "hide_name": 1,
+          "bits": [ 810, 811, 812, 813 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:33.5-65.8"
+          }
+        },
+        "$flatten\\pfd_inst.$0\\sample_en[0:0]": {
+          "hide_name": 1,
+          "bits": [ 814 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:33.5-65.8"
+          }
+        },
+        "$flatten\\pfd_inst.$0\\state[1:0]": {
+          "hide_name": 1,
+          "bits": [ 815, 816 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:33.5-65.8"
+          }
+        },
+        "$flatten\\pfd_inst.$logic_and$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46$32_Y": {
+          "hide_name": 1,
+          "bits": [ 807 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46.25-46.45"
+          }
+        },
+        "$flatten\\pfd_inst.$logic_and$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47$34_Y": {
+          "hide_name": 1,
+          "bits": [ 809 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47.30-47.50"
+          }
+        },
+        "$flatten\\pfd_inst.$logic_not$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46$31_Y": {
+          "hide_name": 1,
+          "bits": [ 806 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:46.37-46.45"
+          }
+        },
+        "$flatten\\pfd_inst.$logic_not$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47$33_Y": {
+          "hide_name": 1,
+          "bits": [ 808 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:47.41-47.50"
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$116_Y": {
+          "hide_name": 1,
+          "bits": [ 821, 822 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$118_Y": {
+          "hide_name": 1,
+          "bits": [ 830, 831 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$119_CMP": {
+          "hide_name": 1,
+          "bits": [ 827 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$120_Y": {
+          "hide_name": 1,
+          "bits": [ 823, 824 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$122_CMP": {
+          "hide_name": 1,
+          "bits": [ 828 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$123_Y": {
+          "hide_name": 1,
+          "bits": [ 832, 833 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$126_Y": {
+          "hide_name": 1,
+          "bits": [ 825, 826 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$128_CMP": {
+          "hide_name": 1,
+          "bits": [ 829 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$133_Y": {
+          "hide_name": 1,
+          "bits": [ 837, 838, 839, 840 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$134_CMP": {
+          "hide_name": 1,
+          "bits": [ 834 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$135_CMP": {
+          "hide_name": 1,
+          "bits": [ 835 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\pfd_inst.$procmux$136_CMP": {
+          "hide_name": 1,
+          "bits": [ 836 ],
+          "attributes": {
+          }
+        },
+        "$lt$/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45$3_Y": {
+          "hide_name": 1,
+          "bits": [ 841 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:45.21-45.38"
+          }
+        },
+        "$procmux$36_Y": {
+          "hide_name": 1,
+          "bits": [ 858, 859, 860, 861, 862 ],
+          "attributes": {
+          }
+        },
+        "$procmux$39_Y": {
+          "hide_name": 1,
+          "bits": [ 863, 864, 865, 866, 867 ],
+          "attributes": {
+          }
+        },
+        "$procmux$45_Y": {
+          "hide_name": 1,
+          "bits": [ 868, 869, 870, 871, 872 ],
+          "attributes": {
+          }
+        },
+        "$procmux$48_Y": {
+          "hide_name": 1,
+          "bits": [ 873, 874, 875, 876, 877 ],
+          "attributes": {
+          }
+        },
+        "$procmux$54_Y": {
+          "hide_name": 1,
+          "bits": [ 878, 879, 880, 881, 882, 883 ],
+          "attributes": {
+          }
+        },
+        "$procmux$57_Y": {
+          "hide_name": 1,
+          "bits": [ 884, 885, 886, 887, 888, 889 ],
+          "attributes": {
+          }
+        },
+        "dco_inst.accumulator": {
+          "hide_name": 0,
+          "bits": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 69 ],
+          "attributes": {
+            "hdlname": "dco_inst accumulator",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/dco_nco.v:11.21-11.32"
+          }
+        },
+        "debug_dco_word": {
+          "hide_name": 0,
+          "bits": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:11.30-11.44"
+          }
+        },
+        "div_inst.clk_out": {
+          "hide_name": 0,
+          "bits": [ 367 ],
+          "attributes": {
+            "hdlname": "div_inst clk_out",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:5.24-5.31"
+          }
+        },
+        "div_inst.counter": {
+          "hide_name": 0,
+          "bits": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+          "attributes": {
+            "hdlname": "div_inst counter",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/divider.v:8.16-8.23"
+          }
+        },
+        "div_val": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:6.30-6.37"
+          }
+        },
+        "dynamic_ki": {
+          "hide_name": 0,
+          "bits": [ 795, 796, 797, 798, 799 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:23.15-23.25"
+          }
+        },
+        "dynamic_kp": {
+          "hide_name": 0,
+          "bits": [ 790, 791, 792, 793, 794 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:22.15-22.25"
+          }
+        },
+        "initial_freq": {
+          "hide_name": 0,
+          "bits": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:7.30-7.42"
+          }
+        },
+        "lf_inst.error_in": {
+          "hide_name": 0,
+          "bits": [ 631, 632, 633, 634 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "lf_inst error_in",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:5.30-5.38"
+          }
+        },
+        "lf_inst.integ_term": {
+          "hide_name": 0,
+          "bits": [ 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "lf_inst integ_term",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:15.24-15.34"
+          }
+        },
+        "lf_inst.integrator": {
+          "hide_name": 0,
+          "bits": [ 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "lf_inst integrator",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:13.23-13.33"
+          }
+        },
+        "lf_inst.next_integrator": {
+          "hide_name": 0,
+          "bits": [ 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "lf_inst next_integrator",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:22.24-22.39"
+          }
+        },
+        "lf_inst.prop_term": {
+          "hide_name": 0,
+          "bits": [ 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "lf_inst prop_term",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:14.24-14.33"
+          }
+        },
+        "lf_inst.sample_en": {
+          "hide_name": 0,
+          "bits": [ 717 ],
+          "attributes": {
+            "hdlname": "lf_inst sample_en",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:4.30-4.39"
+          }
+        },
+        "lf_inst.zero_error_count": {
+          "hide_name": 0,
+          "bits": [ 594, 595, 596, 597, 598 ],
+          "attributes": {
+            "hdlname": "lf_inst zero_error_count",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/loop_filter.v:26.15-26.31"
+          }
+        },
+        "lock_detect": {
+          "hide_name": 0,
+          "bits": [ 70 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:10.30-10.41"
+          }
+        },
+        "pfd_inst.fb_rise": {
+          "hide_name": 0,
+          "bits": [ 805 ],
+          "attributes": {
+            "hdlname": "pfd_inst fb_rise",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:24.10-24.17"
+          }
+        },
+        "pfd_inst.fb_sync": {
+          "hide_name": 0,
+          "bits": [ 820, 803, 804 ],
+          "attributes": {
+            "hdlname": "pfd_inst fb_sync",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:11.25-11.32"
+          }
+        },
+        "pfd_inst.ref_rise": {
+          "hide_name": 0,
+          "bits": [ 802 ],
+          "attributes": {
+            "hdlname": "pfd_inst ref_rise",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:23.10-23.18"
+          }
+        },
+        "pfd_inst.ref_sync": {
+          "hide_name": 0,
+          "bits": [ 819, 800, 801 ],
+          "attributes": {
+            "hdlname": "pfd_inst ref_sync",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:11.15-11.23"
+          }
+        },
+        "pfd_inst.state": {
+          "hide_name": 0,
+          "bits": [ 817, 818 ],
+          "attributes": {
+            "hdlname": "pfd_inst state",
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:31.15-31.20"
+          }
+        },
+        "pll_out": {
+          "hide_name": 0,
+          "bits": [ 69 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:9.30-9.37"
+          }
+        },
+        "ref_clk": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:5.30-5.37"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:3.30-3.35"
+          }
+        },
+        "sys_clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:2.30-2.37"
+          }
+        },
+        "unlock_timer": {
+          "hide_name": 0,
+          "bits": [ 103, 104, 105, 106, 107, 108 ],
+          "attributes": {
+            "src": "/Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:26.15-26.27"
+          }
+        }
+      }
+    }
+  }
+}

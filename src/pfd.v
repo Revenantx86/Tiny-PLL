@@ -30,7 +30,7 @@ module pfd (
 
     reg [1:0] state;
 
-    always @(posedge sys_clk or negedge rst_n) begin
+    always @(posedge sys_clk) begin
         if (!rst_n) begin
             state     <= STATE_IDLE;
             error_out <= 0;
