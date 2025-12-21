@@ -30,8 +30,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vpll_top VL_NOT_FINAL : public VerilatedModel
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
     VL_IN8(&sys_clk,0,0);
-    VL_IN8(&rst_n,0,0);
     VL_OUT8(&pll_out,0,0);
+    VL_IN8(&rst_n,0,0);
     VL_IN8(&ref_clk,0,0);
     VL_OUT8(&lock_detect,0,0);
     VL_IN(&div_val,31,0);

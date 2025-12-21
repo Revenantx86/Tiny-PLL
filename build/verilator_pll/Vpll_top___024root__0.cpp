@@ -16,13 +16,9 @@ void Vpll_top___024root___eval_triggers__act(Vpll_top___024root* vlSelf) {
     vlSelfRef.__VactTriggered[0U] = (QData)((IData)(
                                                     ((((IData)(vlSelfRef.pll_out) 
                                                        & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__pll_out__0))) 
-                                                      << 2U) 
-                                                     | ((((IData)(vlSelfRef.sys_clk) 
-                                                          & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__sys_clk__0))) 
-                                                         << 1U) 
-                                                        | ((~ (IData)(vlSelfRef.rst_n)) 
-                                                           & (IData)(vlSelfRef.__Vtrigprevexpr___TOP__rst_n__0))))));
-    vlSelfRef.__Vtrigprevexpr___TOP__rst_n__0 = vlSelfRef.rst_n;
+                                                      << 1U) 
+                                                     | ((IData)(vlSelfRef.sys_clk) 
+                                                        & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__sys_clk__0))))));
     vlSelfRef.__Vtrigprevexpr___TOP__sys_clk__0 = vlSelfRef.sys_clk;
     vlSelfRef.__Vtrigprevexpr___TOP__pll_out__0 = vlSelfRef.pll_out;
 #ifdef VL_DEBUG
@@ -202,11 +198,11 @@ void Vpll_top___024root___eval_nba(Vpll_top___024root* vlSelf) {
     Vpll_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((3ULL & vlSelfRef.__VnbaTriggered[0U])) {
+    if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
         Vpll_top___024root___nba_sequent__TOP__0(vlSelf);
         vlSelfRef.__Vm_traceActivity[1U] = 1U;
     }
-    if ((5ULL & vlSelfRef.__VnbaTriggered[0U])) {
+    if ((2ULL & vlSelfRef.__VnbaTriggered[0U])) {
         Vpll_top___024root___nba_sequent__TOP__1(vlSelf);
     }
 }

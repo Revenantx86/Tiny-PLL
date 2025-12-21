@@ -25,7 +25,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vloop_filter___024root final : public Verilat
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VicoFirstIteration;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__rst_n__0;
     VL_IN(initial_freq,31,0);
     VL_OUT(dco_ctrl,31,0);
     IData/*31:0*/ loop_filter__DOT__integrator;

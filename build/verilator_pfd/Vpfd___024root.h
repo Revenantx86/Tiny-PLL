@@ -23,7 +23,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vpfd___024root final : public VerilatedModule
     CData/*2:0*/ pfd__DOT__ref_sync;
     CData/*2:0*/ pfd__DOT__fb_sync;
     CData/*1:0*/ pfd__DOT__state;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__rst_n__0;
     CData/*0:0*/ __Vtrigprevexpr___TOP__sys_clk__0;
     IData/*31:0*/ __VactIterCount;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;

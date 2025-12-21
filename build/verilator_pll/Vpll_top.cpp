@@ -11,8 +11,8 @@ Vpll_top::Vpll_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vpll_top__Syms(contextp(), _vcname__, this)}
     , sys_clk{vlSymsp->TOP.sys_clk}
-    , rst_n{vlSymsp->TOP.rst_n}
     , pll_out{vlSymsp->TOP.pll_out}
+    , rst_n{vlSymsp->TOP.rst_n}
     , ref_clk{vlSymsp->TOP.ref_clk}
     , lock_detect{vlSymsp->TOP.lock_detect}
     , div_val{vlSymsp->TOP.div_val}

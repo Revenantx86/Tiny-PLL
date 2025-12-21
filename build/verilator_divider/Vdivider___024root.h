@@ -18,7 +18,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vdivider___024root final : public VerilatedMo
     VL_IN8(rst_n,0,0);
     VL_OUT8(clk_out,0,0);
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk_in__0;
-    CData/*0:0*/ __Vtrigprevexpr___TOP__rst_n__0;
     VL_IN(div_val,31,0);
     IData/*31:0*/ divider__DOT__counter;
     IData/*31:0*/ __VactIterCount;

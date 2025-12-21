@@ -1,0 +1,71 @@
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 16.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/tmp/fc5406a68b114004ac84266bc8eabd0e.lib ",
+   "modules": {
+      "\\pll_top": {
+         "num_wires":         1346,
+         "num_wire_bits":     1661,
+         "num_pub_wires":     21,
+         "num_pub_wire_bits": 232,
+         "num_ports":         8,
+         "num_port_bits":     101,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1545,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 441,
+            "$_AND_": 36,
+            "$_DFFE_PN_": 54,
+            "$_DFFE_PP_": 9,
+            "$_DFF_P_": 4,
+            "$_MUX_": 63,
+            "$_NAND_": 91,
+            "$_NOR_": 139,
+            "$_NOT_": 121,
+            "$_ORNOT_": 19,
+            "$_OR_": 178,
+            "$_SDFFE_PN0P_": 8,
+            "$_SDFFE_PP0P_": 6,
+            "$_SDFF_PN0_": 40,
+            "$_SDFF_PN1_": 1,
+            "$_SDFF_PP0_": 32,
+            "$_XNOR_": 79,
+            "$_XOR_": 224
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1346,
+         "num_wire_bits":     1661,
+         "num_pub_wires":     21,
+         "num_pub_wire_bits": 232,
+         "num_ports":         8,
+         "num_port_bits":     101,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1545,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 441,
+            "$_AND_": 36,
+            "$_DFFE_PN_": 54,
+            "$_DFFE_PP_": 9,
+            "$_DFF_P_": 4,
+            "$_MUX_": 63,
+            "$_NAND_": 91,
+            "$_NOR_": 139,
+            "$_NOT_": 121,
+            "$_ORNOT_": 19,
+            "$_OR_": 178,
+            "$_SDFFE_PN0P_": 8,
+            "$_SDFFE_PP0P_": 6,
+            "$_SDFF_PN0_": 40,
+            "$_SDFF_PN1_": 1,
+            "$_SDFF_PP0_": 32,
+            "$_XNOR_": 79,
+            "$_XOR_": 224
+         }
+      }
+}
+

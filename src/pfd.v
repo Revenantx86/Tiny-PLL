@@ -9,7 +9,7 @@ module pfd (
 
     // 1. Synchronizers
     reg [2:0] ref_sync, fb_sync;
-    always @(posedge sys_clk or negedge rst_n) begin
+    always @(posedge sys_clk) begin
         if (!rst_n) begin
             ref_sync <= 0;
             fb_sync  <= 0;

@@ -1,0 +1,136 @@
+Reading OpenROAD database at '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/24-openroad-ioplacement/pll_top.odb'…
+Reading library file at '/Users/refikyalcin/.ciel/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading design constraints file at '/nix/store/7x1qis8my0i44w1lx1yq2wiwh6yc774i-python3-3.11.9-env/lib/python3.11/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock sys_clk…
+[INFO] Setting output delay to: 2.0
+[INFO] Setting input delay to: 2.0
+[INFO] Setting load to: 0.033442
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
+[INFO] Setting RC values…
+[INFO] Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO] Setting signal max routing layer to: met5 and clock max routing layer to met5. 
++ global_placement -density 0.57276 -timing_driven -routability_driven -pad_right 0 -pad_left 0 -init_wirelength_coef 0.25
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  5.520 10.880 ) ( 173.420 176.800 ) um
+[INFO GPL-0006] NumInstances:              1705
+[INFO GPL-0007] NumPlaceInstances:         1205
+[INFO GPL-0008] NumFixedInstances:          500
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                   1272
+[INFO GPL-0011] NumPins:                   4559
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 179.015 189.735 ) um
+[INFO GPL-0013] CoreBBox: (  5.520 10.880 ) ( 173.420 176.800 ) um
+[INFO GPL-0016] CoreArea:             27857.968 um^2
+[INFO GPL-0017] NonPlaceInstsArea:      930.893 um^2
+[INFO GPL-0018] PlaceInstsArea:       12697.178 um^2
+[INFO GPL-0019] Util:                    47.154 %
+[INFO GPL-0020] StdInstsArea:         12697.178 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[InitialPlace]  Iter: 1 CG residual: 0.00000739 HPWL: 27401599
+[InitialPlace]  Iter: 2 CG residual: 0.00003982 HPWL: 21037218
+[InitialPlace]  Iter: 3 CG residual: 0.00002183 HPWL: 19674845
+[InitialPlace]  Iter: 4 CG residual: 0.00000354 HPWL: 19190256
+[InitialPlace]  Iter: 5 CG residual: 0.00000292 HPWL: 18994351
+[INFO GPL-0031] FillerInit:NumGCells:      1471
+[INFO GPL-0032] FillerInit:NumGNets:       1272
+[INFO GPL-0033] FillerInit:NumGPins:       4559
+[INFO GPL-0023] TargetDensity:            0.573
+[INFO GPL-0024] AvrgPlaceInstArea:       10.537 um^2
+[INFO GPL-0025] IdealBinArea:            18.397 um^2
+[INFO GPL-0026] IdealBinCnt:               1514
+[INFO GPL-0027] TotalBinArea:         27857.968 um^2
+[INFO GPL-0028] BinCnt:        32     32
+[INFO GPL-0029] BinSize: (  5.247  5.185 )
+[INFO GPL-0030] NumBins: 1024
+[NesterovSolve] Iter:    1 overflow: 0.880 HPWL: 12317948
+[INFO GPL-0100] Timing-driven: executing resizer for reweighting nets.
+[INFO GPL-0101] Timing-driven: worst slack 3.95e-09
+[INFO GPL-0103] Timing-driven: weighted 126 nets.
+[NesterovSolve] Iter:   10 overflow: 0.759 HPWL: 13867337
+[NesterovSolve] Iter:   20 overflow: 0.724 HPWL: 13581135
+[NesterovSolve] Iter:   30 overflow: 0.709 HPWL: 13445357
+[NesterovSolve] Iter:   40 overflow: 0.706 HPWL: 13384604
+[NesterovSolve] Iter:   50 overflow: 0.717 HPWL: 13368553
+[NesterovSolve] Iter:   60 overflow: 0.720 HPWL: 13383083
+[NesterovSolve] Iter:   70 overflow: 0.720 HPWL: 13397396
+[NesterovSolve] Iter:   80 overflow: 0.718 HPWL: 13395738
+[NesterovSolve] Iter:   90 overflow: 0.718 HPWL: 13384946
+[NesterovSolve] Iter:  100 overflow: 0.717 HPWL: 13381997
+[NesterovSolve] Iter:  110 overflow: 0.717 HPWL: 13389038
+[NesterovSolve] Iter:  120 overflow: 0.716 HPWL: 13398676
+[NesterovSolve] Iter:  130 overflow: 0.716 HPWL: 13407550
+[NesterovSolve] Iter:  140 overflow: 0.715 HPWL: 13419241
+[NesterovSolve] Iter:  150 overflow: 0.712 HPWL: 13442790
+[NesterovSolve] Iter:  160 overflow: 0.707 HPWL: 13487883
+[NesterovSolve] Iter:  170 overflow: 0.699 HPWL: 13556153
+[NesterovSolve] Iter:  180 overflow: 0.686 HPWL: 13645100
+[NesterovSolve] Iter:  190 overflow: 0.672 HPWL: 13762841
+[NesterovSolve] Iter:  200 overflow: 0.657 HPWL: 13925056
+[NesterovSolve] Iter:  210 overflow: 0.635 HPWL: 14157992
+[INFO GPL-0100] Timing-driven: executing resizer for reweighting nets.
+[INFO GPL-0101] Timing-driven: worst slack 4e-09
+[INFO GPL-0103] Timing-driven: weighted 124 nets.
+[NesterovSolve] Iter:  220 overflow: 0.610 HPWL: 14399186
+[NesterovSolve] Snapshot saved at iter = 223
+[NesterovSolve] Iter:  230 overflow: 0.578 HPWL: 14638105
+[NesterovSolve] Iter:  240 overflow: 0.549 HPWL: 14925856
+[NesterovSolve] Iter:  250 overflow: 0.510 HPWL: 15157233
+[INFO GPL-0100] Timing-driven: executing resizer for reweighting nets.
+[INFO GPL-0101] Timing-driven: worst slack 3.99e-09
+[INFO GPL-0103] Timing-driven: weighted 126 nets.
+[NesterovSolve] Iter:  260 overflow: 0.476 HPWL: 15387434
+[NesterovSolve] Iter:  270 overflow: 0.439 HPWL: 15678896
+[NesterovSolve] Iter:  280 overflow: 0.403 HPWL: 15957921
+[NesterovSolve] Iter:  290 overflow: 0.366 HPWL: 16213387
+[NesterovSolve] Iter:  300 overflow: 0.332 HPWL: 16462390
+[NesterovSolve] Iter:  310 overflow: 0.301 HPWL: 16570728
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[INFO GPL-0036] TileBBox: (    0    0 ) ( 6900 6900 ) DBU
+[INFO GPL-0038] TileCnt:      25   27
+[INFO GPL-0040] NumTiles: 675
+[INFO GPL-0081] TotalRouteOverflow: 0
+[INFO GPL-0082] OverflowTileCnt: 0
+[INFO GPL-0083] 0.5%RC: 0.8651383221149445
+[INFO GPL-0084] 1.0%RC: 0.842092113835471
+[INFO GPL-0085] 2.0%RC: 0.8198238951819283
+[INFO GPL-0086] 5.0%RC: 0.7739065552459043
+[INFO GPL-0087] FinalRC: 0.8536152
+[INFO GPL-0077] FinalRC lower than targetRC(1.01), routability not needed.
+[INFO GPL-0100] Timing-driven: executing resizer for reweighting nets.
+[INFO GPL-0101] Timing-driven: worst slack 4.17e-09
+[INFO GPL-0103] Timing-driven: weighted 127 nets.
+[NesterovSolve] Iter:  320 overflow: 0.272 HPWL: 16742194
+[NesterovSolve] Iter:  330 overflow: 0.242 HPWL: 16893461
+[NesterovSolve] Iter:  340 overflow: 0.219 HPWL: 17085479
+[INFO GPL-0100] Timing-driven: executing resizer for reweighting nets.
+[INFO GPL-0101] Timing-driven: worst slack 4.06e-09
+[INFO GPL-0103] Timing-driven: weighted 127 nets.
+[NesterovSolve] Iter:  350 overflow: 0.193 HPWL: 17232622
+[NesterovSolve] Iter:  360 overflow: 0.170 HPWL: 17398322
+[NesterovSolve] Iter:  370 overflow: 0.146 HPWL: 17566326
+[INFO GPL-0100] Timing-driven: executing resizer for reweighting nets.
+[INFO GPL-0101] Timing-driven: worst slack 4.08e-09
+[INFO GPL-0103] Timing-driven: weighted 126 nets.
+[NesterovSolve] Iter:  380 overflow: 0.126 HPWL: 17735541
+[NesterovSolve] Iter:  390 overflow: 0.107 HPWL: 17912684
+[NesterovSolve] Finished with Overflow: 0.098230
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               122     457.94
+  Tap cell                                378     472.95
+  Buffer                                    1       5.00
+  Inverter                                 28     105.10
+  Sequential cell                         154    3275.64
+  Multi-Input combinational cell         1022    9311.43
+  Total                                  1705   13628.07
+Writing OpenROAD database to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/27-openroad-globalplacement/pll_top.odb'…
+Writing netlist to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/27-openroad-globalplacement/pll_top.nl.v'…
+Writing powered netlist to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/27-openroad-globalplacement/pll_top.pnl.v'…
+Writing layout to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/27-openroad-globalplacement/pll_top.def'…
+Writing timing constraints to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-19_11-17-37/27-openroad-globalplacement/pll_top.sdc'…
