@@ -1,0 +1,59 @@
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 16.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_14-46-57/tmp/6f4f93eca92e4e8e9623c06411ff5724.lib ",
+   "modules": {
+      "\\pll_top": {
+         "num_wires":         1510,
+         "num_wire_bits":     1825,
+         "num_pub_wires":     21,
+         "num_pub_wire_bits": 232,
+         "num_ports":         8,
+         "num_port_bits":     101,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1709,
+         "area":              3275.641600,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 441,
+            "$_AND_": 36,
+            "$_MUX_": 227,
+            "$_NAND_": 91,
+            "$_NOR_": 139,
+            "$_NOT_": 121,
+            "$_ORNOT_": 19,
+            "$_OR_": 178,
+            "$_XNOR_": 79,
+            "$_XOR_": 224,
+            "sky130_fd_sc_hd__dfxtp_2": 154
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1510,
+         "num_wire_bits":     1825,
+         "num_pub_wires":     21,
+         "num_pub_wire_bits": 232,
+         "num_ports":         8,
+         "num_port_bits":     101,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1709,
+         "area":              3275.641600,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 441,
+            "$_AND_": 36,
+            "$_MUX_": 227,
+            "$_NAND_": 91,
+            "$_NOR_": 139,
+            "$_NOT_": 121,
+            "$_ORNOT_": 19,
+            "$_OR_": 178,
+            "$_XNOR_": 79,
+            "$_XOR_": 224,
+            "sky130_fd_sc_hd__dfxtp_2": 154
+         }
+      }
+}
+

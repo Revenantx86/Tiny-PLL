@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/tmp/806eefdbc8934aa2a98541afc4c5f065.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/tmp/806eefdbc8934aa2a98541afc4c5f065.bb.v"

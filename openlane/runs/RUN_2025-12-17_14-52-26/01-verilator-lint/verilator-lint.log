@@ -1,9 +1,0 @@
-%Warning-SYNCASYNCNET: /Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:3:30: Signal flopped as both synchronous and async: 'rst_n'
-                       /Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pfd.v:13:14: ... Location of async usage
-   13 |         if (!rst_n) begin
-      |              ^~~~~
-                       /Users/refikyalcin/vlsi/digital/Tiny-PLL/src/pll_top.v:29:14: ... Location of sync usage
-   29 |         if (!rst_n) begin
-      |              ^~~~~
-                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.018
-                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.

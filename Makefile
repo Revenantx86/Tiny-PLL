@@ -2,6 +2,9 @@
 # =                 MAKEFILE               =
 # ==========================================
 
+# Default PDK if none is specified
+PDK ?= sky130A
+
 # --- 1. CONFIGURATION ---
 PROJECT_SRCS = dco_nco.v pfd.v divider.v loop_filter.v pll_top.v
 TEST ?= tb_pll_top
@@ -121,14 +124,13 @@ verilator-pll: $(BUILD_DIR)
 synth:
 	@echo "$(GREEN)========================================$(NC)"
 	@echo "$(BLUE)  [OpenLane] Starting Synthesis...$(NC)"
+	@echo "$(BLUE)  Target PDK: $(PDK)$(NC)"
 	@echo "$(BLUE)  Config: $(OL_CONFIG)$(NC)"
 	@echo "$(GREEN)========================================$(NC)"
 	
-	# 1. CD into the LibreLane tools folder
-	# 2. Run nix-shell non-interactively using --run
-	# 3. Inside the shell, execute 'openlane' pointing to your config
+	# We pass --pdk $(PDK) to the openlane command
 	cd $(LIBRELANE_DIR) && \
-	nix-shell --run "openlane $(OL_CONFIG)"
+	nix-shell --run "openlane $(OL_CONFIG) --pdk $(PDK)"
 
 # --- UTILS ---
 clean:

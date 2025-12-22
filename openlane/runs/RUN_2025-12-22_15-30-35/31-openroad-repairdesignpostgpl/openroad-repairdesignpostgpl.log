@@ -1,0 +1,73 @@
+Reading timing models for corner nom_ff_n40C_5v50…
+Reading timing library for the 'nom_ff_n40C_5v50' corner at '/Users/refikyalcin/.ciel/ciel/gf180mcu/versions/0fe599b2afb6708d281543108caf8310912f54af/gf180mcuC/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_5v50.lib'…
+Reading timing models for corner nom_tt_025C_5v00…
+Reading timing library for the 'nom_tt_025C_5v00' corner at '/Users/refikyalcin/.ciel/ciel/gf180mcu/versions/0fe599b2afb6708d281543108caf8310912f54af/gf180mcuC/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_5v00.lib'…
+Reading timing models for corner nom_ss_125C_4v50…
+Reading timing library for the 'nom_ss_125C_4v50' corner at '/Users/refikyalcin/.ciel/ciel/gf180mcu/versions/0fe599b2afb6708d281543108caf8310912f54af/gf180mcuC/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_4v50.lib'…
+Reading OpenROAD database at '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/27-openroad-globalplacement/pll_top.odb'…
+Reading design constraints file at '/nix/store/7x1qis8my0i44w1lx1yq2wiwh6yc774i-python3-3.11.9-env/lib/python3.11/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock sys_clk…
+[INFO] Setting output delay to: 4.8
+[INFO] Setting input delay to: 4.8
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
+[INFO] Setting RC values…
+[INFO RSZ-0027] Inserted 66 input buffers.
+[INFO RSZ-0028] Inserted 34 output buffers.
+[INFO RSZ-0058] Using max wire length 10284um.
+Iteration | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------
+        0 |       0 |       0 |             0 |      1465
+      100 |      10 |      12 |             2 |      1365
+      200 |      13 |      12 |             5 |      1265
+      300 |      22 |      12 |             7 |      1165
+      400 |      38 |      14 |            10 |      1065
+      500 |      56 |      16 |            12 |       965
+      600 |      78 |      16 |            19 |       865
+      700 |      91 |      20 |            22 |       765
+      800 |     117 |      31 |            26 |       665
+      900 |     145 |      50 |            69 |       565
+     1000 |     178 |      87 |            90 |       465
+     1100 |     202 |     132 |            93 |       365
+     1200 |     246 |     143 |            99 |       265
+     1300 |     283 |     202 |           121 |       165
+     1400 |     389 |     273 |           142 |        65
+    final |     389 |     273 |           142 |         0
+---------------------------------------------------------
+[INFO RSZ-0034] Found 58 slew violations.
+[INFO RSZ-0035] Found 84 fanout violations.
+[INFO RSZ-0038] Inserted 273 buffers in 142 nets.
+[INFO RSZ-0039] Resized 389 instances.
+Placement Analysis
+---------------------------------
+total displacement       7177.8 u
+average displacement        3.2 u
+max displacement           23.8 u
+original HPWL           38630.2 u
+legalized HPWL          44666.1 u
+delta HPWL                   16 %
+
+[INFO DPL-0020] Mirrored 709 instances
+[INFO DPL-0021] HPWL before           44666.1 u
+[INFO DPL-0022] HPWL after            43221.9 u
+[INFO DPL-0023] HPWL delta               -3.2 %
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Endcap cell                             130     570.75
+  Tap cell                                435    1909.82
+  Buffer                                    1      13.17
+  Timing Repair Buffer                    373    5650.44
+  Inverter                                 81     728.81
+  Sequential cell                         154    9808.15
+  Multi-Input combinational cell         1062   22623.73
+  Total                                  2236   41304.88
+Writing OpenROAD database to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/31-openroad-repairdesignpostgpl/pll_top.odb'…
+Writing netlist to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/31-openroad-repairdesignpostgpl/pll_top.nl.v'…
+Writing powered netlist to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/31-openroad-repairdesignpostgpl/pll_top.pnl.v'…
+Writing layout to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/31-openroad-repairdesignpostgpl/pll_top.def'…
+Writing timing constraints to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/31-openroad-repairdesignpostgpl/pll_top.sdc'…

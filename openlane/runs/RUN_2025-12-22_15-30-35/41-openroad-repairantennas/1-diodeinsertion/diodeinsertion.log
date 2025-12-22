@@ -1,0 +1,141 @@
+Reading OpenROAD database at '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/38-openroad-globalrouting/pll_top.odb'…
+Reading library file at '/Users/refikyalcin/.ciel/ciel/gf180mcu/versions/0fe599b2afb6708d281543108caf8310912f54af/gf180mcuC/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_5v00.lib'…
+Reading design constraints file at '/nix/store/7x1qis8my0i44w1lx1yq2wiwh6yc774i-python3-3.11.9-env/lib/python3.11/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock sys_clk…
+[INFO] Setting output delay to: 4.8
+[INFO] Setting input delay to: 4.8
+[INFO] Setting load to: 0.07291
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.1499999999999999944488848768742172978818416595458984375
+[INFO] Setting timing derate to: 5%
+[INFO] Setting signal min routing layer to: Metal2 and clock min routing layer to Metal2. 
+[INFO] Setting signal max routing layer to: Metal5 and clock max routing layer to Metal5. 
+-congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: Metal5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.5600  line-2-Via Pitch: 0.4750
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal5  Track-Pitch = 0.9000  line-2-Via Pitch: 0.8200
+[INFO GRT-0019] Found 18 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 0
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical        16486         10553          35.99%
+Metal3     Horizontal      16482         10540          36.05%
+Metal4     Vertical        16486          8954          45.69%
+Metal5     Horizontal       9902          5115          48.34%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 9055
+[INFO GRT-0198] Via related Steiner nodes: 122
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 10965
+[INFO GRT-0112] Final usage 3D: 38527
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2           10553          2938           27.84%             0 /  0 /  0
+Metal3           10540          2679           25.42%             0 /  0 /  0
+Metal4            8954            15            0.17%             0 /  0 /  0
+Metal5            5115             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            35162          5632           16.02%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 78766 um
+[INFO GRT-0014] Routed nets: 1755
+[INFO GRT-0006] Repairing antennas, iteration 1.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 0 antenna violations.
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL           45095.0 u
+legalized HPWL          46637.1 u
+delta HPWL                    3 %
+
+[INFO DPL-0020] Mirrored 714 instances
+[INFO DPL-0021] HPWL before           46637.1 u
+[INFO DPL-0022] HPWL after            45095.0 u
+[INFO DPL-0023] HPWL delta               -3.3 %
+-congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: Metal5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.5600  line-2-Via Pitch: 0.4750
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.5600  line-2-Via Pitch: 0.5600
+[INFO GRT-0088] Layer Metal5  Track-Pitch = 0.9000  line-2-Via Pitch: 0.8200
+[INFO GRT-0019] Found 18 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 0
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical        16486         10553          35.99%
+Metal3     Horizontal      16482         10540          36.05%
+Metal4     Vertical        16486          8954          45.69%
+Metal5     Horizontal       9902          5115          48.34%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 9055
+[INFO GRT-0198] Via related Steiner nodes: 122
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 10965
+[INFO GRT-0112] Final usage 3D: 38527
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2           10553          2938           27.84%             0 /  0 /  0
+Metal3           10540          2679           25.42%             0 /  0 /  0
+Metal4            8954            15            0.17%             0 /  0 /  0
+Metal5            5115             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            35162          5632           16.02%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 78766 um
+[INFO GRT-0014] Routed nets: 1755
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Endcap cell                             130     570.75
+  Tap cell                                435    1909.82
+  Buffer                                    1      13.17
+  Clock buffer                             22    1176.63
+  Timing Repair Buffer                    373    5650.44
+  Inverter                                 81     728.81
+  Clock inverter                           10     193.18
+  Sequential cell                         154    9808.15
+  Multi-Input combinational cell         1062   22623.73
+  Total                                  2268   42674.69
+Writing OpenROAD database to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/41-openroad-repairantennas/1-diodeinsertion/pll_top.odb'…
+Writing layout to '/Users/refikyalcin/vlsi/digital/Tiny-PLL/openlane/runs/RUN_2025-12-22_15-30-35/41-openroad-repairantennas/1-diodeinsertion/pll_top.def'…
