@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Dec 23 14:35:45 2025
+# Process ID         : 58523
+# Current directory  : /home/highpoly/vlsi/digital/Tiny-PLL/fpga_pll/fpga_pll.runs/impl_1
+# Command line       : vivado -log fpga_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source fpga_top.tcl -notrace
+# Log file           : /home/highpoly/vlsi/digital/Tiny-PLL/fpga_pll/fpga_pll.runs/impl_1/fpga_top.vdi
+# Journal file       : /home/highpoly/vlsi/digital/Tiny-PLL/fpga_pll/fpga_pll.runs/impl_1/vivado.jou
+# Running On         : highpoly
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor
+# CPU Frequency      : 5561.804 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 98756 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 107346 MB
+# Available Virtual  : 95654 MB
+#-----------------------------------------------------------
+source fpga_top.tcl -notrace

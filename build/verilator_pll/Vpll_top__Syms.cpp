@@ -17,8 +17,6 @@ Vpll_top__Syms::Vpll_top__Syms(VerilatedContext* contextp, const char* namep, Vp
     // Setup module instances
     , TOP{this, namep}
 {
-    // Check resources
-    Verilated::stackCheck(204);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);
     _vm_contextp__->timeprecision(-12);

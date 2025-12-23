@@ -23,6 +23,4 @@
 #include "Vpll_top__Syms.h"
 #include "Vpll_top.h"
 
-// Additional include files added using '--compiler-include'
-
 #endif  // guard

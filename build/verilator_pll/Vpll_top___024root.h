@@ -33,20 +33,21 @@ class alignas(VL_CACHE_LINE_BYTES) Vpll_top___024root final : public VerilatedMo
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __Vtrigprevexpr___TOP__sys_clk__0;
     CData/*0:0*/ __Vtrigprevexpr___TOP__pll_out__0;
+    CData/*0:0*/ __VactContinue;
     VL_IN(div_val,31,0);
     VL_IN(initial_freq,31,0);
     VL_OUT(debug_dco_word,31,0);
     IData/*31:0*/ pll_top__DOT__dco_ctrl_word;
     IData/*31:0*/ pll_top__DOT__lf_inst__DOT__integrator;
     IData/*31:0*/ pll_top__DOT__lf_inst__DOT__next_integrator;
-    IData/*31:0*/ pll_top__DOT__lf_inst__DOT____VdfgRegularize_hbae78005_0_0;
+    IData/*31:0*/ pll_top__DOT__lf_inst__DOT____VdfgTmp_h7d8f5e2e__0;
     IData/*31:0*/ pll_top__DOT__dco_inst__DOT__accumulator;
     IData/*31:0*/ pll_top__DOT__div_inst__DOT__counter;
     IData/*31:0*/ __VactIterCount;
-    VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
-    VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
-    VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
+    VlTriggerVec<1> __VstlTriggered;
+    VlTriggerVec<2> __VactTriggered;
+    VlTriggerVec<2> __VnbaTriggered;
 
     // INTERNAL VARIABLES
     Vpll_top__Syms* const vlSymsp;

@@ -1,24 +1,24 @@
-module dco_nco #(
-    parameter WIDTH = 32  // Accumulator width. Higher = finer frequency resolution
-)(
-    input  wire             sys_clk,      // System clock (e.g., 100MHz)
-    input  wire             rst_n,        // Active low reset
-    input  wire [WIDTH-1:0] tuning_word,  // Control input (sets frequency)
-    output wire             dco_out       // Generated output clock
+module dco_nco (
+    input  wire        sys_clk,      // FPGA System Clock (e.g., 100 MHz)
+    input  wire        rst_n,
+    input  wire [31:0] tuning_word,  // From Loop Filter
+    output wire        dco_out       // The "Synthesized" Clock
 );
 
-    // The Phase Accumulator
-    reg [WIDTH-1:0] accumulator;
+    // 32-bit Phase Accumulator
+    reg [31:0] accumulator;
 
-    always @(posedge sys_clk) begin
+    always @(posedge sys_clk ) begin
         if (!rst_n) begin
-            accumulator <= {WIDTH{1'b0}};
+            accumulator <= 0;
         end else begin
-            // Increment phase by the tuning word every cycle
+            // Every clock cycle, we add the 'Step Size' (Tuning Word)
+            // The speed of overflow determines the output frequency.
             accumulator <= accumulator + tuning_word;
         end
     end
 
-    // The MSB is the output clock (50% duty cycle on average, but with jitter)
-    assign dco_out = accumulator[WIDTH-1];
+    // The MSB (Most Significant Bit) is our 50% duty cycle square wave
+    assign dco_out = accumulator[31];
+
 endmodule

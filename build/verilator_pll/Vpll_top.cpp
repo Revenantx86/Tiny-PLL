@@ -22,8 +22,6 @@ Vpll_top::Vpll_top(VerilatedContext* _vcontextp__, const char* _vcname__)
 {
     // Register model with the context
     contextp()->addModel(this);
-    contextp()->traceBaseModelCbAdd(
-        [this](VerilatedTraceBaseC* tfp, int levels, int options) { traceBaseModel(tfp, levels, options); });
 }
 
 Vpll_top::Vpll_top(const char* _vcname__)
@@ -75,7 +73,7 @@ void Vpll_top::eval_step() {
 bool Vpll_top::eventsPending() { return false; }
 
 uint64_t Vpll_top::nextTimeSlot() {
-    VL_FATAL_MT(__FILE__, __LINE__, "", "No delays in the design");
+    VL_FATAL_MT(__FILE__, __LINE__, "", "%Error: No delays in the design");
     return 0;
 }
 
@@ -133,14 +131,12 @@ VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32
 
 VL_ATTR_COLD void Vpll_top___024root__trace_register(Vpll_top___024root* vlSelf, VerilatedVcd* tracep);
 
-VL_ATTR_COLD void Vpll_top::traceBaseModel(VerilatedTraceBaseC* tfp, int levels, int options) {
-    (void)levels; (void)options;
-    VerilatedVcdC* const stfp = dynamic_cast<VerilatedVcdC*>(tfp);
-    if (VL_UNLIKELY(!stfp)) {
-        vl_fatal(__FILE__, __LINE__, __FILE__,"'Vpll_top::trace()' called on non-VerilatedVcdC object;"
-            " use --trace-fst with VerilatedFst object, and --trace-vcd with VerilatedVcd object");
+VL_ATTR_COLD void Vpll_top::trace(VerilatedVcdC* tfp, int levels, int options) {
+    if (tfp->isOpen()) {
+        vl_fatal(__FILE__, __LINE__, __FILE__,"'Vpll_top::trace()' shall not be called after 'VerilatedVcdC::open()'.");
     }
-    stfp->spTrace()->addModel(this);
-    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP));
-    Vpll_top___024root__trace_register(&(vlSymsp->TOP), stfp->spTrace());
+    if (false && levels && options) {}  // Prevent unused
+    tfp->spTrace()->addModel(this);
+    tfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP));
+    Vpll_top___024root__trace_register(&(vlSymsp->TOP), tfp->spTrace());
 }
