@@ -141,3 +141,5 @@ help:
 	@echo "Usage:"
 	@echo "  make verilator-pll   -> Run PLL simulation"
 	@echo "  make synth           -> Run OpenLane synthesis"
+
+#EOF
